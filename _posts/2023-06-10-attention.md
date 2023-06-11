@@ -2,8 +2,7 @@
 layout:       post
 title:        "Self Attention"
 author:       "Ke"
-header-img: "img/post-bg-miui-ux.jpg"
-header-mask: 0.4
+header-style: text
 catalog:      true
 tags:
     - Python
