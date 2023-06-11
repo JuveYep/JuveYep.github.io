@@ -1,13 +1,12 @@
 ---
-layout:     post
-title:      "MobileViT"
-#subtitle:   "ES5, ES6, ES2016, ES.Next: What's going on with JavaScript versioning?"
-date:       2023-06-10
-author:     "Ke"
-header-img: ""
+layout:       post
+title:        "MobileViT"
+author:       "Ke"
+header-style: text
+catalog:      true
 tags:
-    - Python
-    - MobileViT
+    - Python
+    - Pytorch
 ---
 
 >写论文的过程总是痛苦的
