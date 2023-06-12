@@ -8,8 +8,7 @@ mathjax: true
 tags:
     - Transformer
 ---
->Attention
-# Attention机制的用处,[[code]](https://github.com/tensorflow/tensor2tensor/blob/master/tensor2tensor/models/transformer.py)
+# $Attention$
 
 $Attention$[[paper]]([[paper]](https://arxiv.org/pdf/1409.0473.pdf)),由 Bengio 于2015提出。
 
@@ -66,3 +65,39 @@ $Attention$的机制能够帮助我们在处理单个的 $token$ 的时候，带
 这些仅仅是Attention在知识图谱中的一些应用示例。实际应用中，Attention机制可以用于各种任务，以提高模型对知识图谱的理解和应用能力。
 
 ## 4.$Attention$的工作原理
+
+一个 $Attention$ 的计算过程有三步：  
+1.$query$ 和 $key$ 进行相似度计算，得到一个 $query$ 和 $key$ 相关性的分值；  
+2.将这个分值进行归一化($softmax$)，得到一个注意力的分布；  
+3.使用注意力分布和 $value$ 进行计算，得到一个融合注意力的更好的 $value$ 值。   
+比如这张图
+![img](/img/in-post/post-attention/encode-decode.jpg)
+在没有注意力之前，我们每次都是根据 $Encoder$ 部分的输出结果来进行生成，提出注意力后，就是想在生成翻译结果时并不是看 $Encoder$ 中所有的输出结果，而是先来看看，我想生成的这部分和哪些单词可能关系会比较大，关系大的我多借鉴些；关系小的，少借鉴些。就是这样一个想法，我们看看该如何操作。
+
+- 我们把 $Decoder$ 部分输入后得到的向量作为 $query$；把 $Encoder$ 部分每个单词的向量作为 $key$.我先我们先把 $query$ 和每一个单词进行点乘 
+ ，得到相关性的分值；
+ 
+- 有了这些分值后，我们对这些分值做一个 $softmax$
+ ，得到一个注意力的分布
+
+- 有了这个注意力，我们就可以用它和 $Encoder$ 的输出值 ($value$) 进行相乘，得到一个加权求和后的值，这个值就包含注意力的表示，我们用它来预测要生成的词
+
+<video width="640" height="360" controls>
+  <source src="/img/in-post/post-attention/encode-decode.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+## 5.在推荐系统中
+
+在商品推荐系统中，$query$ 就是我当前要判断的商品的向量，$key$ 就是用户购买序列中，每一个商品的向量。
+
+- $query$ 和 $key$ 进行相似度计算，得到待判断商品和购买序列中商品的相关性分值；
+- 将这个分值进行归一化($softmax$)，得到一个商品注意力的分布，看看哪些商品是判断的重要依据；
+- 使用注意力分布和 $value$ 进行计算，得到一个融合注意力的更好的 $value$ 值，这个值就是最终我们融合判断当前商品是否推荐购买的依据。  
+
+当然，$Attention$ 并不是只有这一种计算方式，后来还有很多人找到了各种各样的计算注意力的方法。但是从本质上，它们都遵循着这个三步走的逻辑，如果你能把对它的理解，放到你的任务中，那你就离着创造自己的 $Attention$ 不远了。
+
+总的而言，$Attention$的三步走如下：  
+$query$ 和 $key$ 进行相似度计算，得到一个 $query$ 和 $key$ 相关性的分值；
+将这个分值进行归一化($softmax$)，得到一个注意力的分布；
+使用注意力分布和 $value$ 进行计算，得到一个融合注意力的更好的 $value$ 值。

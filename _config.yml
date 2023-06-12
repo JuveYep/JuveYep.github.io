@@ -16,7 +16,7 @@ future: true
 RSS: false
 weibo_username: 喜欢我苹果派吗
 zhihu_username: mk
-github_username: JuveYep
+#github_username: JuveYep
 twitter_username: mk
 facebook_username:  mk
 #linkedin_username:  firstname-lastname-idxxxx

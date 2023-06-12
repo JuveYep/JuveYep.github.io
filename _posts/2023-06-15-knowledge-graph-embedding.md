@@ -1,12 +1,12 @@
 ---
 layout:       post
-title:        "MobileViT"
+title:        "KGE"
 author:       "Ke"
 header-style: text
 catalog:      true
+mathjax: true
 tags:
-    - Python
-    - Pytorch
+    - KGE
 ---
 
-
+# What is KGE

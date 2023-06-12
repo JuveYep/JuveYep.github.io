@@ -1,12 +1,12 @@
 ---
 layout:       post
-title:        "MobileViT"
+title:        "Embedding"
 author:       "Ke"
 header-style: text
 catalog:      true
+mathjax: true
 tags:
-    - Python
-    - Pytorch
+    - Embedding
 ---
 
-
+# Embedding的详细内容
