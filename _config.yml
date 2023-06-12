@@ -14,7 +14,7 @@ future: true
 
 # SNS settings
 RSS: false
-weibo_username: mk
+weibo_username: 喜欢我苹果派吗
 zhihu_username: mk
 github_username: mk
 twitter_username: mk
