@@ -1,9 +1,9 @@
 # Site settings
 # title: Ke7's Blog
 title: Ke7
-SEOTitle: 孟珂的博客 | Meng Ke's Blog
+SEOTitle: CN Ke Meng | Meng Ke's Blog
 header-img: img/home-bg.jpg
-email: huxpro@gmail.com
+email: cnkemeng@163.com
 description: "这里是 @Ke7 的个人博客，与你一起发现更大的世界 | 要做一个有想法的人"
 keyword: "孟珂, Ke, ke7, @ke, 孟珂的博客, 个人网站, CV, NLP,互联网, Web, JavaScript, Vue,React, React Native, 前端, 设计"
 url: "https://mengke7.xyz" # your host, for absolute URL
@@ -16,9 +16,9 @@ future: true
 RSS: false
 weibo_username: 喜欢我苹果派吗
 zhihu_username: mk
-github_username: mk
+github_username: JuveYep
 twitter_username: mk
-#facebook_username:  huxpro
+facebook_username:  mk
 #linkedin_username:  firstname-lastname-idxxxx
 
 # Build settings
