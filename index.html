@@ -3,10 +3,16 @@ layout: page
 description: "" 
 --- 
 {% for post in paginator.posts %}
+{% if post.top == true %}
+
+<link rel="stylesheet" href="{{ " /css/hux-blog.css" | prepend: site.baseurl }}">
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">
-            {{ post.title }}
+            <div class="top-flag">
+                <span>置顶</span>
+              </div>
+              {{ post.title }}
         </h2>
         {% if post.subtitle %}
         <h3 class="post-subtitle">
@@ -21,7 +27,37 @@ description: ""
         Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
     </p>
 </div>
-<hr> {% endfor %}
+<hr> 
+{% endif %}
+{% endfor %}
+
+{% for post in paginator.posts %}
+{% if post.top != true %}
+<div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">
+            {{ post.title }}
+        </h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
+        {% endif %}
+        <div class="post-content-preview">
+            {% if post.lang == 'en' %}
+                {{ post.content | strip_html | truncate:300 }}
+            {% else %}
+                {{ post.content | strip_html | truncate:200 }}
+            {% endif %}
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+    </p>
+</div>
+<hr>
+{% endif %}
+{% endfor %}
 
 <!-- Pager -->
 {% if paginator.total_pages > 1 %}

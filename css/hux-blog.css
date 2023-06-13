@@ -1694,3 +1694,13 @@ img::-moz-selection {
 .no-scroll {
   overflow-y: hidden;
 }
+
+.top-flag {
+    background-color: #f2f2f2;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+
