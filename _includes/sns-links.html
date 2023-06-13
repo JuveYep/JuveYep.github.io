@@ -78,10 +78,25 @@
     </a>
   </li>
   {% endif %}
-  <!-- {%if site.email_username %}
+  {% if site.email_username %}
   <li>
-    <a target="_blank" href=""
+    <a target="_blank" href="mailto:{{ site.email_username }}@163.com">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
   </li>
-  
-  {% endif %} -->
+  {% endif %}
+  {% if site.google_username %}
+  <li>
+    <a target="_blank" href="mailto:{{site.google_username}}@gmail.com">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-google fa-stack-1x fa-inverse"></i>
+      </span>
+
+    </a>
+  </li>
+  {% endif %}
 </ul>
