@@ -1,6 +1,76 @@
-                <!-- Language Selector -->
+                <!-- Language Selector
                 <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
                     <option value="0" selected> 中文 | Chinese </option>
                     <option value="1"> 英文 | English </option>
-                </select>
+                </select>-->
+
+    <title>Language Selection</title>
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Language Selection</h1>
+    <button onclick="openModal()">Select Language</button>
+    
+    <div id="languageModal" class="modal">
+        <div class="modal-content">
+            <h2>Select Language</h2>
+            <select id="languageSelect">
+                <option value="0" selected>中文 | Chinese</option>
+                <option value="1">英文 | English</option>
+            </select>
+            <button onclick="changeLanguage()">Confirm</button>
+        </div>
+    </div>
+    
+    <script>
+        function openModal() {
+            var modal = document.getElementById("languageModal");
+            modal.style.display = "block";
+        }
+        
+        function changeLanguage() {
+            
+            var select = document.getElementById("languageSelect");
+            var selectedValue = select.options[select.selectedIndex].value;
+            
+            if (selectedValue === "0") {
+                // Perform actions for Chinese language
+                alert("You selected Chinese.");
+                onLanChange(selectedValue);
+            } else if (selectedValue === "1") {
+                // Perform actions for English language
+                alert("You selected English.");
+                onLanChange(selectedValue);
+            }
+            
+            
+            var modal = document.getElementById("languageModal");
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+
+                
+
 

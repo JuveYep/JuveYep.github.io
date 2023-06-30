@@ -67,4 +67,37 @@ $$y_{the},y_{cat},y_{walks},y_{on},y_{the},y_{street}$$
 - Self-attention看到的序列只是一个集合(set)，不是一个序列，它并没有顺序。如果我们重新排列集合，输出的序列也是一样的。后面我们要使用一些方法来缓和这种没有顺序所带来的信息的缺失。但是值得一提的是，Self-attention 本身是忽略序列的自然输入顺序的。
 
 
+## 用于transformers中的self-attention依赖于几部分
+
+### 1.Queries, keys and values
+对于每个输入的向量$x_i$, transfomer中将其分为了$Q,K,V$.我们使用三个$k\times k$的矩阵$W_q.W_k,W_v$来对每一个$x_i$做线性变换
+- $Q$ 用于与其他向量比较来建立它自身的输出向量$y_i$的权重  
+
+
+
+- $K$ 用于与其他向量比较来建立$j-th$的输出向量$y_j$的权重
+
+- $V$ 一旦建立了权重，它就被用作加权和的一部分来计算每个输出向量。
+
+它们的计算公式如下：
+$$q_i=W_1 x_i \quad
+k_i=W_kx_i\quad
+v_i=W_vx_i\\
+w_{ij}'=q_i^Tk_j\\
+w_{ij}=softmax(w_{ij}')\\
+y_i=\sum_jw_{ij}v_j.$$
+这为自注意层提供了一些可控的参数，并允许其修改传入向量以适应$Q,K,V$
+
+![img](/img/in-post/post-self-attention/qkv.jpg)
+$self-attention$中$Q,K,V$的变换过程
+### 2.Scaling the dot preduct
+softmax函数可能对非常大的输入值敏感。这些会扼杀梯度，减缓学习速度，或者导致学习完全停止。由于点积的平均值随着嵌入维度k的增长而增长，因此将点积缩小一点有助于阻止softmax函数的输入过大
+$$
+    w_{ij}'=\frac{q_i^Tk_j}{\sqrt k}
+$$
+为什么是$\sqrt k$呢，假设有一个向量$v\in \mathbb{R}^k$，向量的值全部都是常数$c$，那么它的欧几里得长度是$\sqrt k c$。因此，我们正在划分维度的增加使平均向量的长度增加的量。
+
+### 3.Multi-head attention
+
+
 
