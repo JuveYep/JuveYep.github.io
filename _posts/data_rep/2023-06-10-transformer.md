@@ -19,7 +19,6 @@ tags:
 
 ## Attention is All You Need [[paper]](https://arxiv.org/abs/1706.03762),[[code]](https://github.com/tensorflow/tensor2tensor/blob/master/tensor2tensor/models/transformer.py)
 
-关于transformer可说的就太多了，我先从全局说一下transformer结构的几个主要组件和几个要点。
 
 ## Encoder
 
@@ -29,7 +28,5 @@ ALBERT - BERT - DistilBERT - ELECTRA - RoBERTa
 
 CTRL - GPT - GPT-2 - Transformer XL
 
-## Positional Encoding
 
-## Attention Mechanism
 
