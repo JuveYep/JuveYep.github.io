@@ -1,4 +1,4 @@
-Hey, I am Huang, Xuan (a.k.a. _@huxpro_). I worked on the [React Team](https://beta.reactjs.org/community/meet-the-team#react-core) at <del>Facebook</del>Meta.
+<!-- Hey, I am Huang, Xuan (a.k.a. _@huxpro_). I worked on the [React Team](https://beta.reactjs.org/community/meet-the-team#react-core) at <del>Facebook</del>Meta.
 
 I considered myself as a hybrid between a software engineer specifically into the programming languages theories and implementations domain (i.e. compiler, type system, type-based formal verification, virtual machine, runtime systems, garbage collection), and a creative technologiest deeply caring about many humanistic aspects (e.g. visual, sound, interaction) in UI and HCI in general.
 
@@ -35,4 +35,12 @@ I studied BA, Digital Media Art at [Communication University of China](https://e
 [9]: //huangxuan.me/jsconfcn2017/
 [10]: https://reactnative.dev/blog/2021/10/26/toward-hermes-being-the-default
 [11]: https://youtu.be/lGEMwh32soc
-[12]: https://reactjs.org/blog/2022/06/15/react-labs-what-we-have-been-working-on-june-2022.html
+[12]: https://reactjs.org/blog/2022/06/15/react-labs-what-we-have-been-working-on-june-2022.html -->
+
+Hello, this is Ke.
+
+I have some understanding of artificial intelligence and computer science and consider myself a dreamer who believes that artificial intelligence will undoubtedly have more possibilities. Currently, I am pursuing a master's degree in Applied Statistics at Central South University. During my undergraduate studies, I majored in Applied Statistics at Northeastern University, where I had the opportunity to meet many interesting peers at the Pioneer Network Center, sparking a strong interest in computers.
+
+My current research primarily focuses on Computer Vision (CV) and Natural Language Processing (NLP). I feel there are still many landscapes on this journey that I haven't explored, and I aspire to continually improve myself.
+
+From childhood to now, I have always had many unique ideas. I hope that one day I can turn my ideas into reality, and I am working hard towards that goal.
